@@ -3,7 +3,7 @@ import GenerateComps from "../components/test/generate";
 
 const TestPage=()=>{
     const [activeTest,setActiveTest] = useState("")
-    const [options,setOptions] = useState(['toggle','navBar'])
+    const [options,setOptions] = useState(['toggle','navBar','swipe_slider'])
 
     return(
         <div className="h-screen w-full grid content-center gap-y-2 relative">

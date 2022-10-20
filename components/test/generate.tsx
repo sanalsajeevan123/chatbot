@@ -26,44 +26,36 @@ const GenerateComps = (props:MyProps) => {
                         <li onMouseEnter={()=>setHoverMenu('Menu 1')} className={`w-32 h-full relative flex items-center justify-center hover:bg-slate-300 font-semibold transform duration-300`}>
                             Menu 1
                             <div className={`w-32 ${hoverMenu === "Menu 1" ? `max-h-screen` : `max-h-0`} bg-gray-200 absolute top-full overflow-hidden transform duration-1000`}>
-                                <h1 className="w-full h-10 flex items-center justify-center">Sub Menu</h1>
-                                <h1 className="w-full h-10 flex items-center justify-center">Sub Menu</h1>
-                                <h1 className="w-full h-10 flex items-center justify-center">Sub Menu</h1>
-                                <h1 className="w-full h-10 flex items-center justify-center">Sub Menu</h1>
+                                {[...Array(4)].map((item:any,key:any)=> <h1 className="w-full h-10 flex items-center justify-center" key={key}>Sub Menu</h1> )}
                             </div>
                         </li>
                         <li onMouseEnter={()=>setHoverMenu('Menu 2')} className={`w-32 h-full relative flex items-center justify-center hover:bg-slate-300 font-semibold transform duration-300`}>
                             Menu 2
                             <div className={`w-32 ${hoverMenu === "Menu 2" ? `max-h-screen` : `max-h-0`} bg-gray-200 absolute top-full overflow-hidden transform duration-1000`}>
-                                <h1 className="w-full h-10 flex items-center justify-center">Sub Menu</h1>
-                                <h1 className="w-full h-10 flex items-center justify-center">Sub Menu</h1>
-                                <h1 className="w-full h-10 flex items-center justify-center">Sub Menu</h1>
-                                <h1 className="w-full h-10 flex items-center justify-center">Sub Menu</h1>
-                                <h1 className="w-full h-10 flex items-center justify-center">Sub Menu</h1>
-                                <h1 className="w-full h-10 flex items-center justify-center">Sub Menu</h1>
-                                <h1 className="w-full h-10 flex items-center justify-center">Sub Menu</h1>
+                            {[...Array(7)].map((item:any,key:any)=> <h1 className="w-full h-10 flex items-center justify-center" key={key}>Sub Menu</h1> )}
                             </div>
                         </li>
                         <li onMouseEnter={()=>setHoverMenu('Menu 3')} className={`w-32 h-full relative flex items-center justify-center hover:bg-slate-300 font-semibold transform duration-300`}>
                             Menu 3
                             <div className={`w-32 ${hoverMenu === "Menu 3" ? `max-h-screen` : `max-h-0`} bg-gray-200 absolute top-full overflow-hidden transform duration-1000`}>
-                                <h1 className="w-full h-10 flex items-center justify-center">Sub Menu</h1>
-                                <h1 className="w-full h-10 flex items-center justify-center">Sub Menu</h1>
-                                <h1 className="w-full h-10 flex items-center justify-center">Sub Menu</h1>
-                                <h1 className="w-full h-10 flex items-center justify-center">Sub Menu</h1>
-                                <h1 className="w-full h-10 flex items-center justify-center">Sub Menu</h1>
-                                <h1 className="w-full h-10 flex items-center justify-center">Sub Menu</h1>
-                                <h1 className="w-full h-10 flex items-center justify-center">Sub Menu</h1>
-                                <h1 className="w-full h-10 flex items-center justify-center">Sub Menu</h1>
-                                <h1 className="w-full h-10 flex items-center justify-center">Sub Menu</h1>
-                                <h1 className="w-full h-10 flex items-center justify-center">Sub Menu</h1>
-                                <h1 className="w-full h-10 flex items-center justify-center">Sub Menu</h1>
-                                <h1 className="w-full h-10 flex items-center justify-center">Sub Menu</h1>
+                            {[...Array(10)].map((item:any,key:any)=> <h1 className="w-full h-10 flex items-center justify-center" key={key}>Sub Menu</h1> )}
                             </div>
                         </li>
                     </ul>
                 </div>
             );
+        case 'swipe_slider' :
+            return(
+                <div className="w-full py-5 flex justify-center">
+                    <div className="w-80 h-80 bg-white flex overflow-x-scroll snap-x snap-mandatory">
+                        {[...Array(5)].map((item:any,key:any)=>(
+                            <div className={`min-w-full min-h-full bg-red-${key+2}00 flex items-center justify-center text-3xl font-bold snap-center`} key={key}>
+                                {key+1}
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            )
         default :
                 return <h1>default</h1>
     }
