@@ -22,22 +22,22 @@ const GenerateComps = (props:MyProps) => {
             return(
                 <div className="w-full p-5 space-x-5 text-center space-y-2">
                     <h1>Hover for naviation menu</h1>
-                    <ul className="flex items-center justify-center h-12 bg-gray-200" onMouseLeave={()=>setHoverMenu('')}>
-                        <li onMouseEnter={()=>setHoverMenu('Menu 1')} className={`w-32 h-full relative flex items-center justify-center hover:bg-slate-300 font-semibold transform duration-300`}>
-                            Menu 1
-                            <div className={`w-32 ${hoverMenu === "Menu 1" ? `max-h-screen` : `max-h-0`} bg-gray-200 absolute top-full overflow-hidden transform duration-1000`}>
+                    <ul className="flex items-center justify-center h-12 bg-blue-500 border border-blue-500" onMouseLeave={()=>setHoverMenu('')}>
+                        <li onMouseEnter={()=>setHoverMenu('Menu 1')} className={`w-32 h-full relative flex items-center justify-center hover:bg-white font-semibold transform duration-300`}>
+                            <p className={`${hoverMenu === "Menu 1" ? `text-slate-800` : `text-white`}`}>Menu 1</p>
+                            <div className={`w-32 ${hoverMenu === "Menu 1" ? `max-h-screen` : `max-h-0`} bg-gray-300 absolute top-full overflow-hidden transform duration-1000`}>
                                 {[...Array(4)].map((item:any,key:any)=> <h1 className="w-full h-10 flex items-center justify-center" key={key}>Sub Menu</h1> )}
                             </div>
                         </li>
-                        <li onMouseEnter={()=>setHoverMenu('Menu 2')} className={`w-32 h-full relative flex items-center justify-center hover:bg-slate-300 font-semibold transform duration-300`}>
-                            Menu 2
-                            <div className={`w-32 ${hoverMenu === "Menu 2" ? `max-h-screen` : `max-h-0`} bg-gray-200 absolute top-full overflow-hidden transform duration-1000`}>
+                        <li onMouseEnter={()=>setHoverMenu('Menu 2')} className={`w-32 h-full relative flex items-center justify-center hover:bg-white font-semibold transform duration-300`}>
+                            <p className={`${hoverMenu === "Menu 2" ? `text-slate-800` : `text-white`}`}>Menu 2</p>
+                            <div className={`w-32 ${hoverMenu === "Menu 2" ? `max-h-screen` : `max-h-0`} bg-gray-300 absolute top-full overflow-hidden transform duration-1000`}>
                             {[...Array(7)].map((item:any,key:any)=> <h1 className="w-full h-10 flex items-center justify-center" key={key}>Sub Menu</h1> )}
                             </div>
                         </li>
-                        <li onMouseEnter={()=>setHoverMenu('Menu 3')} className={`w-32 h-full relative flex items-center justify-center hover:bg-slate-300 font-semibold transform duration-300`}>
-                            Menu 3
-                            <div className={`w-32 ${hoverMenu === "Menu 3" ? `max-h-screen` : `max-h-0`} bg-gray-200 absolute top-full overflow-hidden transform duration-1000`}>
+                        <li onMouseEnter={()=>setHoverMenu('Menu 3')} className={`w-32 h-full relative flex items-center justify-center hover:bg-white font-semibold transform duration-300`}>
+                            <p className={`${hoverMenu === "Menu 3" ? `text-slate-800` : `text-white`}`}>Menu 3</p>
+                            <div className={`w-32 ${hoverMenu === "Menu 3" ? `max-h-screen` : `max-h-0`} bg-gray-300 absolute top-full overflow-hidden transform duration-1000`}>
                             {[...Array(10)].map((item:any,key:any)=> <h1 className="w-full h-10 flex items-center justify-center" key={key}>Sub Menu</h1> )}
                             </div>
                         </li>
@@ -49,8 +49,8 @@ const GenerateComps = (props:MyProps) => {
                 <div className="w-full py-5 flex justify-center">
                     <div className="w-80 h-80 bg-white flex overflow-x-scroll snap-x snap-mandatory">
                         {[...Array(5)].map((item:any,key:any)=>(
-                            <div className={`min-w-full min-h-full bg-red-${key+2}00 flex items-center justify-center text-3xl font-bold snap-center`} key={key}>
-                                {key+1}
+                            <div className={`min-w-full min-h-full bg-gradient-to-br from-blue-500 to-emerald-600 flex items-center justify-center snap-center`} key={key}>
+                                <p className="text-white text-5xl font-bold">{key+1}</p>
                             </div>
                         ))}
                     </div>
